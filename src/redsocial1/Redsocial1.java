@@ -4,6 +4,7 @@
  */
 package redsocial1;
 
+import Frames.InicionDeSesion;
 import java.util.Scanner;
 
 /**
@@ -16,10 +17,12 @@ public class Redsocial1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            Usuarios u=new Usuarios();
+        InicionDeSesion id= new InicionDeSesion();
+        //id.setVisible(true);
+        Usuarios u=new Usuarios();
        Scanner scan =new Scanner(System.in);
        
-     /*   System.out.println("Ingrese el nombre");
+      /* System.out.println("Ingrese el nombre");
        String nombre=scan.next();
        System.out.println("Ingrese el apellido");
        String apellido=scan.next();
@@ -34,17 +37,17 @@ public class Redsocial1 {
        System.out.println("Ingrese el estado civil");
        String estadocivil=scan.next();
        
-       u.registrarUsuario(nombre, apellido, correoelectronico, contraseña, edad, sexo, estadocivil);
-   */
+       u.registrarUsuario(nombre, apellido,edad, estadocivil, sexo,correoelectronico,contraseña);*/
+   
      
-        System.out.println("Ingrese correo electronico");
+       System.out.println("Ingrese correo electronico");
         String correo=scan.next();
         System.out.println("Ingrese Contraseña");
         String contraseña=scan.next();
         if (u.inicioDeSesion(correo, contraseña)) {
             System.out.println("Inicio de sesión exitoso");
         } else {
-            System.out.println("Inicio de sesión fallido");
+            System.out.println("El correo o la contraseña son incorrectos");
         }
     }
     

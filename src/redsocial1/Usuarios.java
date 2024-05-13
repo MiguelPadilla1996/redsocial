@@ -87,21 +87,21 @@ public class Usuarios {
     public void setEstadocivil(String estadocivil) {
         this.estadocivil = estadocivil;
     }
-     public  void registrarUsuario(String nombre, String apellido, String correoElectronico, String contraseña, int edad, String sexo, String estadoCivil) {
+     public  void registrarUsuario(String nombre, String apellido, int edad, String estadoCivil, String sexo, String correoElectronico, String contraseña  ) {
         String url = "jdbc:mysql://localhost:3306/prueba";
         String usuarioDB = "root";
         String contraseñaDB = "root";
 
         try (Connection conn = DriverManager.getConnection(url, usuarioDB, contraseñaDB)) {
-            String sql = "INSERT INTO usuarios (Nombre, Apellido, CorreoElectronico, Contraseña, Edad, Sexo, EstadoCivil) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO usuarios (nombre, apellido, edad, estadocivil, sexo, correo, contraseña) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, nombre);
             statement.setString(2, apellido);
-            statement.setString(3, correoElectronico);
-            statement.setString(4, contraseña);
-            statement.setInt(5, edad);
-            statement.setString(6, sexo);
-            statement.setString(7, estadoCivil);
+            statement.setInt(3, edad);
+            statement.setString(4, estadoCivil);
+            statement.setString(5, sexo);
+            statement.setString(6, correoElectronico);
+            statement.setString(7, contraseña);
 
             int filasInsertadas = statement.executeUpdate();
             if (filasInsertadas > 0) {
@@ -120,7 +120,7 @@ public class Usuarios {
         String password = "root";
         
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
-            String sql = "SELECT * FROM usuarios WHERE CorreoElectronico = ? AND Contraseña = ?";
+            String sql = "SELECT * FROM usuarios WHERE correo = ? AND contraseña = ?";
             PreparedStatement statement = conn.prepareStatement(sql);
             statement.setString(1, correo);
             statement.setString(2, contraseña);
