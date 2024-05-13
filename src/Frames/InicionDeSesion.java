@@ -58,6 +58,11 @@ public class InicionDeSesion extends javax.swing.JFrame {
         });
 
         jButton2.setText("Registrarse");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         imagen.setText("Imagen");
 
@@ -131,6 +136,11 @@ public class InicionDeSesion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Correo o Contraseña Invalida", "¡No Se Ha Podido Iniciar Sesión!", JOptionPane.INFORMATION_MESSAGE);
         }        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+Registro r=new Registro();
+r.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

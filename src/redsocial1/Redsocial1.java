@@ -18,7 +18,7 @@ public class Redsocial1 {
      */
     public static void main(String[] args) {
         InicionDeSesion id= new InicionDeSesion();
-        //id.setVisible(true);
+        id.setVisible(true);
         Usuarios u=new Usuarios();
        Scanner scan =new Scanner(System.in);
        
@@ -40,7 +40,7 @@ public class Redsocial1 {
        u.registrarUsuario(nombre, apellido,edad, estadocivil, sexo,correoelectronico,contraseña);*/
    
      
-       System.out.println("Ingrese correo electronico");
+      /* System.out.println("Ingrese correo electronico");
         String correo=scan.next();
         System.out.println("Ingrese Contraseña");
         String contraseña=scan.next();
@@ -48,7 +48,7 @@ public class Redsocial1 {
             System.out.println("Inicio de sesión exitoso");
         } else {
             System.out.println("El correo o la contraseña son incorrectos");
-        }
+        }*/
     }
     
     
